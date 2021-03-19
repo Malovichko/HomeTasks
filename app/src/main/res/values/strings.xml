@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="add">ADD</string>
+    <string name="show">SHOW</string>
+    <string name="edit">Введите что-нибудь</string>
+    <string name="to_second_window">Open second window</string>
+</resources>
