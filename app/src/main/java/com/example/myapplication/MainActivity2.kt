@@ -6,6 +6,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 
 class MainActivity2 : AppCompatActivity() {
@@ -28,6 +29,18 @@ class MainActivity2 : AppCompatActivity() {
         textView = findViewById(R.id.viewStudents)
     }
 
+    private fun checkString(str: String, isNotString: Boolean): Boolean {
+        return if (isNotString) {
+            str.all {
+                it.isDigit()
+            }
+        } else {
+            str.all {
+                it.isLetter()
+            }
+        }
+    }
+
     private fun initListener() {
         showButton?.setOnClickListener {
             var text = StringBuilder()
@@ -43,12 +56,25 @@ class MainActivity2 : AppCompatActivity() {
             override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
                 if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                     var names = ArrayList<String>()
-                    names.addAll(editText?.text.toString().split(" "))
-                    var student = Student(names[0], names[1], names[2], names[3])
-                    nameList.put(student.id, student)
-//                    if (editText.length() > 0) {
-//                        TextKeyListener.clear(editText.getText());
-//                    }
+                    val count = editText?.text.toString().length - editText?.text.toString()
+                        .replace(" ", "").length
+                    if (count == 3) {
+                        names.addAll(editText?.text.toString().split(" "))
+                        if ((checkString(names[0], false)) && (checkString(
+                                names[1],
+                                false
+                            )) && (checkString(names[3], true))
+                        ) {
+                            var student = Student(names[0], names[1], names[2], names[3])
+                            nameList.put(student.id, student)
+                        } else {
+                            Toast.makeText(
+                                this@MainActivity2,
+                                "Ошибка при вводе данных",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
                     editText?.setText("")
                     return true
                 }
