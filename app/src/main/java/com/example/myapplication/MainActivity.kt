@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
 
         showButton?.setOnClickListener {
 //            nameList.sort()
-//            println(nameList)
             val text = sortedSet.joinToString(separator = "\n")
 //            val text = nameList.joinToString(separator = "\n")
             textView.text = text
