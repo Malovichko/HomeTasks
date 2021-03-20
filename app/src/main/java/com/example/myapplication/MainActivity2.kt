@@ -29,57 +29,57 @@ class MainActivity2 : AppCompatActivity() {
         textView = findViewById(R.id.viewStudents)
     }
 
-    private fun checkString(str: String, isNotString: Boolean): Boolean {
-        return if (isNotString) {
-            str.all {
-                it.isDigit()
-            }
-        } else {
-            str.all {
-                it.isLetter()
-            }
+    private fun isDigit(str: String): Boolean {
+        return str.all {
+            it.isDigit()
+        }
+    }
+
+    private fun isString(str: String): Boolean {
+        return str.all {
+            it.isLetter()
         }
     }
 
     private fun initListener() {
-        showButton?.setOnClickListener {
+        showButton.setOnClickListener {
             var text = StringBuilder()
             for ((key, value) in nameList) {
                 var data =
-                    "ID = " + key.toString() + "\nName: " + value.firstName + "\nSurname : " + value.lastName + "\ngrade : " + value.grade + "\nbirthday year : " + value.birthdayYear + "\n\n"
+                    "ID = " + key.toString() + "\nName: " + value.firstName + "\nSurname : " + value.lastName + "\nGrade : " + value.grade + "\nBirthday year : " + value.birthdayYear + "\n\n"
                 text.append(data)
             }
             textView.text = text
         }
 
-        editText.setOnKeyListener(object : View.OnKeyListener {
-            override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
-                if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                    var names = ArrayList<String>()
-                    val count = editText?.text.toString().length - editText?.text.toString()
-                        .replace(" ", "").length
-                    if (count == 3) {
-                        names.addAll(editText?.text.toString().split(" "))
-                        if ((checkString(names[0], false)) && (checkString(
-                                names[1],
-                                false
-                            )) && (checkString(names[3], true))
-                        ) {
-                            var student = Student(names[0], names[1], names[2], names[3])
-                            nameList.put(student.id, student)
-                        } else {
-                            Toast.makeText(
-                                this@MainActivity2,
-                                "Ошибка при вводе данных",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
+        editText.setOnKeyListener { _, keyCode, event ->
+            if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                var names = ArrayList<String>()
+                val count = editText.text.toString().length - editText.text.toString()
+                    .replace(" ", "").length
+                if (count == 3) {
+                    names.addAll(editText.text.toString().split(" "))
+                    if ((isString(names[0])) && (isString(names[1])) && (isDigit(names[3]))) {
+                        var student = Student(names[0], names[1], names[2], names[3])
+                        nameList.put(student.id, student)
+                    } else {
+                        Toast.makeText(
+                            this@MainActivity2,
+                            "Ошибка при вводе данных",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
-                    editText?.setText("")
-                    return true
+                } else {
+                    Toast.makeText(
+                        this@MainActivity2,
+                        "Ошибка при вводе данных",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
-                return false
+                editText.setText("")
+                return@setOnKeyListener true
             }
-        })
+            return@setOnKeyListener false
+        }
     }
 }

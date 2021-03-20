@@ -3,5 +3,6 @@
     <string name="add">ADD</string>
     <string name="show">SHOW</string>
     <string name="edit">Введите что-нибудь</string>
+    <string name="student_hint">Имя Фамилия Класс Год рождения</string>
     <string name="to_second_window">Open second window</string>
 </resources>
