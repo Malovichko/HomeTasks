@@ -55,13 +55,16 @@ class MainActivity2 : AppCompatActivity() {
         editText.setOnKeyListener { _, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 var names = ArrayList<String>()
-                val count = editText.text.toString().length - editText.text.toString()
-                    .replace(" ", "").length
-                if (count == 3) {
-                    names.addAll(editText.text.toString().split(" "))
+                var inpStr = editText.text.toString().split(" ")
+                var countWords = inpStr.count()
+                println(countWords)
+                if (countWords == 4 && inpStr[0].isNotEmpty() && inpStr[1].isNotEmpty() && inpStr[2].isNotEmpty() && inpStr[3].length == 4) {
+                    names.addAll(inpStr)
                     if ((isString(names[0])) && (isString(names[1])) && (isDigit(names[3]))) {
-                        var student = Student(names[0], names[1], names[2], names[3])
-                        nameList.put(student.id, student)
+                        if (names[3].toInt() in 1971..2019) {
+                            var student = Student(names[0], names[1], names[2], names[3])
+                            nameList.put(student.id, student)
+                        }
                     } else {
                         Toast.makeText(
                             this@MainActivity2,
