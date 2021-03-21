@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Локализованное приложение</string>
+    <string name="about_text">
+        Оковы тяжкие падут,\nТемницы рухнут — и свобода\nВас примет радостно у входа,\nИ братья меч вам отдадут.
+    </string>
+    <string name="button_text">Радость и счастье</string>
+    <string name="custom_button_text">Кнопка 1</string>
+</resources>
