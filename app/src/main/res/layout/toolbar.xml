@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sunflower">
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="201dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/custom_toolbar"
+            app:srcCompat="@drawable/rectangle_toolbar"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="17dp"
+            style="@style/Toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:id="@+id/custom_toolbar_image"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_alignStart="@+id/custom_toolbar"
+            android:layout_alignTop="@+id/custom_toolbar"
+            android:layout_alignEnd="@+id/custom_toolbar"
+            android:layout_alignBottom="@+id/custom_toolbar"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="241dp"
+            android:layout_marginBottom="16dp"
+            android:src="@mipmap/ic_profile_spechialist" />
+
+        <TextView
+            android:id="@+id/custom_text_profile"
+            android:layout_width="166dp"
+            android:layout_height="28dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="71dp"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="123dp"
+            android:layout_marginBottom="132dp"
+            android:fontFamily="sans-serif"
+            android:lineSpacingExtra="8sp"
+            android:text="@string/toolbar_text_personal_profile"
+            android:textColor="@color/greyish_brown"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/custom_rectangle_arrow_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="320dp"
+            android:layout_marginBottom="137dp"
+            android:background="@drawable/rectangle_edit"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"/>
+
+        <ImageView
+            android:id="@+id/custom_arrow_back"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignStart="@+id/custom_rectangle_arrow_back"
+            android:layout_alignTop="@+id/custom_rectangle_arrow_back"
+            android:layout_alignEnd="@+id/custom_rectangle_arrow_back"
+            android:layout_alignBottom="@+id/custom_rectangle_arrow_back"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_arrow_back_black_24_px" />
+
+        <include
+            layout="@layout/edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="137dp" />
+
+        <TextView
+            android:id="@+id/custom_text_toolbar"
+            style="@style/TextStyle2"
+            android:layout_width="148dp"
+            android:layout_height="48dp"
+            android:layout_alignStart="@+id/custom_toolbar"
+            android:layout_alignTop="@+id/custom_toolbar"
+            android:layout_alignEnd="@+id/custom_toolbar"
+            android:layout_alignBottom="@+id/custom_toolbar"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="23dp"
+            android:background="@drawable/rectangle_toolbar"
+            android:text="@string/text_card" />
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>

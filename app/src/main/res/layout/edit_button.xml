@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/imageView"
+    android:layout_width="24dp"
+    android:layout_height="24dp">
+
+    <ImageView
+        android:id="@+id/custom_rectangle_edit"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+
+    <ImageView
+        android:id="@+id/custom_edit"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_edit_black_24_px"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_edit"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_edit"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_edit"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_edit" />
+</FrameLayout>
