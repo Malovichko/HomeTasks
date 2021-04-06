@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="add">ADD</string>
-    <string name="show">SHOW</string>
-    <string name="edit">Введите что-нибудь</string>
-    <string name="student_hint">Имя Фамилия Класс Год рождения</string>
-    <string name="to_second_window">Open second window</string>
+    <string name="app_name">HomeWork5</string>
+    <string name="go_to_1">go to 1</string>
+    <string name="go_to_2">go to 2</string>
+    <string name="go_to_3">go to 3</string>
+    <string name="go_to_4">go to 4</string>
+    <string name="go_to_4_again">go to 4 again</string>
+    <string name="go_to_5">go to 5</string>
+    <string name="deliver_result">deliver result</string>
 </resources>
